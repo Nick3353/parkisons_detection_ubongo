@@ -9,9 +9,9 @@
 
 | Name | Role |
 |------|------|
-| [Nicholas Baffoe] | [-] |
-| [-] | [-] |
-| [-] | [-] |
+| Nicholas Baffoe | - |
+| - | - |
+| - | - |
 
 ---
 
