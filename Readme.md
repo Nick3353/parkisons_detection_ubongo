@@ -9,9 +9,9 @@
 
 | Name | Role |
 |------|------|
-| [Add name] | [Add role] |
-| [Add name] | [Add role] |
-| [Add name] | [Add role] |
+| [Nicholas Baffoe] | [-] |
+| [-] | [-] |
+| [-] | [-] |
 
 ---
 
