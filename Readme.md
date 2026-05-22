@@ -286,8 +286,8 @@ Use this section to prepare your presentation. Each chart is explained below.
 
 **What it shows:** Two bars — 147 Parkinson's samples vs 48 Healthy samples.
 
-**What to say:**
-> *"This shows our class balance. We have 147 Parkinson's recordings and 48 healthy ones — a 3 to 1 ratio. This reflects real-world clinic data. We accounted for this imbalance using stratified train-test splitting so both classes were fairly represented during training and evaluation."*
+**Interpretation:**
+> *This bar chart shows our class balance. We have 147 Parkinson's recordings and 48 healthy ones: a 3 to 1 ratio. This imbalance reflects real-world clinic data, so we accounted for it using stratified train-test splitting to make sure both classes were fairly represented during training and testing.*
 
 ---
 
@@ -295,8 +295,8 @@ Use this section to prepare your presentation. Each chart is explained below.
 
 **What it shows:** A colour grid showing how the top 10 features relate to each other and to the target (Parkinson's status). Red = strong positive correlation, blue = negative.
 
-**What to say:**
-> *"This heatmap shows which voice features are most related to the Parkinson's diagnosis. The darker the cell near the status column, the stronger that feature's predictive power. We can also see many Jitter and Shimmer features are correlated with each other — showing some redundancy — which is why Random Forest works well here, as it naturally selects the most informative ones."*
+**Interpretation:**
+> *"This heatmap shows which voice features are most related to the Parkinson's diagnosis. The darker red squares near the status column tell us those features are the strongest predictors. We can also see some features are highly correlated with each other, which is why tree-based models like Random Forest handle this dataset well: they naturally select the most informative ones."*
 
 ---
 
@@ -304,8 +304,8 @@ Use this section to prepare your presentation. Each chart is explained below.
 
 **What it shows:** 6 overlapping histograms — red for Parkinson's, blue for Healthy — for the top 3 Jitter and 3 Shimmer features.
 
-**What to say:**
-> *"These histograms compare how Jitter and Shimmer are distributed between the two groups. Jitter is pitch instability, Shimmer is volume instability. The red Parkinson's bars spread further to the right — their voices are significantly more unstable. This visual separation is why voice data is such a strong signal for detection."*
+**Interpretation:**
+> *"These histograms compare how Jitter and Shimmer are distributed between the two groups. Jitter measures pitch instability and Shimmer measures volume instability in the voice. You can see the red Parkinson's bars spread further to the right, meaning their voices are significantly more unstable than healthy voices. This visual separation is why voice data is such a promising signal for detection."*
 
 ---
 
@@ -313,8 +313,8 @@ Use this section to prepare your presentation. Each chart is explained below.
 
 **What it shows:** 6 boxplots side by side for Healthy vs Parkinson's. The box = middle 50% of values, the centre line = median, dots = outliers.
 
-**What to say:**
-> *"Boxplots confirm what the histograms showed. For each of the top 6 features, the Parkinson's group has a noticeably higher median and wider spread. The bigger the gap between the two boxes, the more predictive that feature is. PPE and spread1 show the clearest separation."*
+**Interpretation:**
+> *"These boxplots confirm what the histograms showed. For each of the top 6 features, the Parkinson's group has a noticeably higher median and wider spread than the healthy group. The bigger the gap between the two boxes, the more useful that feature is for our model. Features like PPE and spread1 show the clearest separation."*
 
 ---
 
@@ -322,8 +322,8 @@ Use this section to prepare your presentation. Each chart is explained below.
 
 **What it shows:** A 2×2 grid per model showing correct and incorrect predictions. Top-left = correctly predicted Healthy. Bottom-right = correctly predicted Parkinson's. The off-diagonal cells are errors.
 
-**What to say:**
-> *"A confusion matrix shows us exactly where the model gets it right and where it makes mistakes. For Random Forest, it correctly identified 28 out of 29 Parkinson's patients. In a medical context, a false negative — telling someone they are healthy when they are not — is the most dangerous error. Our model keeps that number very low."*
+**Interpretation:**
+> *"A confusion matrix shows us where the model gets it right and where it makes mistakes. The diagonal from top-left to bottom-right are the correct predictions. For Random Forest, we can see it correctly identified 28 out of 29 Parkinson's patients and 8 out of 10 healthy ones. In a medical context, missing a Parkinson's patient is the most dangerous error — and our model keeps that number very low."*
 
 ---
 
@@ -331,7 +331,7 @@ Use this section to prepare your presentation. Each chart is explained below.
 
 **What it shows:** All 5 models on one chart. The closer the curve is to the top-left, the better. AUC (Area Under Curve) is shown in the legend — 1.0 is perfect, 0.5 is random.
 
-**What to say:**
+**Interpretation:**
 > *"The ROC curve measures how well each model separates the two classes across all possible decision thresholds. All our models sit well above the dashed random-baseline line. Random Forest achieves the highest AUC — meaning it has the best overall discrimination ability."*
 
 ---
@@ -340,8 +340,8 @@ Use this section to prepare your presentation. Each chart is explained below.
 
 **What it shows:** Side-by-side bars for CV accuracy (blue) vs test accuracy (red) for all 5 models.
 
-**What to say:**
-> *"This chart compares all five models. The blue bar is cross-validation accuracy across 5 folds, the red bar is the final test accuracy on unseen data. The fact these bars are close together means the models are not overfitting — they generalise well. Random Forest leads on CV accuracy."*
+**Interpretation:**
+> *"This chart compares all five models side by side. The blue bar is the cross-validation accuracy — how well the model performed across 5 different train-test folds. The red bar is the final test accuracy on unseen data. The fact that these two bars are close together tells us our models are not memorising the training data:they generalise well. Random Forest came out on top."*
 
 ---
 
@@ -349,8 +349,8 @@ Use this section to prepare your presentation. Each chart is explained below.
 
 **What it shows:** Top 15 voice features ranked by how much they contributed to Random Forest's decisions. Longer bar = more important.
 
-**What to say:**
-> *"This tells us which features the model relied on most. PPE — a nonlinear pitch variation measure — was most important, followed by spread1 and HNR. This makes biological sense — Parkinson's causes both tremor and breathiness, and these features capture exactly that."*
+**Interpretation:**
+> *"This chart tells us which voice features the Random Forest model relied on most. PPE: a nonlinear measure of pitch variation was the single most important feature, followed by spread1 and HNR, which measures the ratio of clean tone to noise in the voice. This makes biological sense: Parkinson's causes both tremor and breathiness in the voice, and these features capture exactly that"*
 
 ---
 
@@ -358,8 +358,8 @@ Use this section to prepare your presentation. Each chart is explained below.
 
 **What it shows:** Left panel — distribution of Motor and Total UPDRS severity scores. Right panel — average UPDRS scores over the 6-month trial period.
 
-**What to say:**
-> *"These charts are from Part 2 — the telemonitoring dataset. The left panel shows most patients have moderate severity. The right panel shows scores gradually increasing over 6 months — confirming the progressive nature of the disease. Our regression model tries to predict these scores from voice alone."*
+**Interpretation::**
+> *"These two charts are from Part 2 — the telemonitoring dataset. On the left, we can see that most patients fall in the moderate severity range. On the right, we can track how the average scores creep upward over the 6-month trial: this confirms the progressive nature of the disease and shows why remote monitoring matters. Our regression model tries to predict these scores from voice alone."*
 
 ---
 
@@ -367,8 +367,8 @@ Use this section to prepare your presentation. Each chart is explained below.
 
 **What it shows:** Scatter plots where each dot is one recording — x-axis is the real UPDRS score, y-axis is what the model predicted. The dashed line = perfect prediction.
 
-**What to say:**
-> *"This scatter plot compares what our model predicted vs what actually happened. If perfect, every dot would land on the dashed line. We see a clear upward trend — the model is definitely learning the pattern. An R² of 0.36 means voice explains about 36% of severity variation. That is meaningful, and honest — UPDRS depends on more than just voice."*
+**Interpretation:**
+> *"This scatter plot compares what our model predicted versus what the actual UPDRS score was. If the model were perfect, every dot would land on the dashed line. We can see a clear upward trend: the model is definitely learning the pattern: but there is scatter around the line. An R² of 0.36 means voice features explain about 36% of the severity variation. That is meaningful, but it also honestly reflects that UPDRS is influenced by many factors beyond just voice."*
 
 ---
 
